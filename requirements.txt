@@ -1,0 +1,9 @@
+fastapi
+uvicorn
+pymilvus
+python-dotenv
+pandas
+llama-index
+llama-index-embeddings-huggingface
+llama-index-llms-dashscope
+openai

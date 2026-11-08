@@ -1,0 +1,250 @@
+/* ========== 全局与页面背景 ========== */
+body {
+  margin: 0;
+  font-family: "PingFang SC", "Microsoft YaHei", Arial, sans-serif;
+  background:
+    radial-gradient(900px 420px at -10% -10%, rgba(124, 92, 255, 0.2) 0%, rgba(124, 92, 255, 0) 60%),
+    radial-gradient(700px 360px at 110% 0%, rgba(52, 211, 153, 0.16) 0%, rgba(52, 211, 153, 0) 62%),
+    linear-gradient(180deg, #f6f8ff 0%, #f2f4fb 100%);
+  color: #1f2430;
+  position: relative;
+  overflow-x: hidden;
+}
+
+body::before,
+body::after {
+  content: "";
+  position: fixed;
+  z-index: -1;
+  border-radius: 50%;
+  filter: blur(3px);
+}
+
+body::before {
+  width: 420px;
+  height: 420px;
+  right: -150px;
+  top: 120px;
+  background: radial-gradient(circle, rgba(124, 92, 255, 0.22) 0%, rgba(124, 92, 255, 0) 70%);
+}
+
+body::after {
+  width: 360px;
+  height: 360px;
+  left: -120px;
+  bottom: 30px;
+  background: radial-gradient(circle, rgba(45, 212, 191, 0.2) 0%, rgba(45, 212, 191, 0) 70%);
+}
+
+.layout {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+}
+
+.workspace {
+  flex: 1;
+  width: 100%;
+  max-width: none;
+  margin: 0 auto;
+  padding: clamp(16px, 2.5vw, 36px) clamp(16px, 4vw, 48px);
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+}
+
+.brand-inline {
+  font-size: 13px;
+  font-weight: 700;
+  color: #4f46c9;
+  letter-spacing: 0.4px;
+  margin-bottom: 6px;
+}
+
+.page-header-text {
+  flex: 1;
+  min-width: 0;
+}
+
+.page-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: clamp(12px, 2vw, 20px);
+  margin-bottom: 18px;
+}
+
+.site-logo {
+  flex-shrink: 0;
+  align-self: center;
+  color: #4f46c9;
+  font-size: 28px;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+  text-decoration: none;
+  line-height: 1;
+}
+
+.card {
+  background: rgba(255, 255, 255, 0.82);
+  backdrop-filter: blur(6px);
+  border-radius: 14px;
+  border: 1px solid rgba(232, 235, 243, 0.95);
+  box-shadow: 0 8px 26px rgba(31, 36, 48, 0.06);
+  padding: 18px;
+  margin-bottom: 14px;
+}
+
+.card-grow {
+  flex: 1;
+  min-height: 200px;
+  display: flex;
+  flex-direction: column;
+}
+
+.card-grow pre {
+  flex: 1;
+  min-height: 12rem;
+}
+
+.card h2 {
+  margin: 0 0 12px;
+  font-size: 18px;
+}
+
+.settings {
+  display: grid;
+  grid-template-columns: 1fr 220px;
+  gap: 12px;
+  margin-bottom: 14px;
+}
+
+.input-label {
+  display: inline-block;
+  margin-bottom: 10px;
+  color: #4d5565;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.text-input {
+  width: 100%;
+  border: 1px solid #d6dceb;
+  border-radius: 12px;
+  padding: 10px 12px;
+  font-size: 14px;
+  box-sizing: border-box;
+  background: #fff;
+  color: #1f2430;
+}
+
+.text-input:focus {
+  outline: none;
+  border-color: #8f87ff;
+  box-shadow: 0 0 0 4px rgba(143, 135, 255, 0.15);
+}
+
+textarea {
+  width: 100%;
+  min-height: 132px;
+  border: 1px solid #d6dceb;
+  border-radius: 12px;
+  padding: 12px;
+  outline: none;
+  resize: vertical;
+  box-sizing: border-box;
+  font-size: 14px;
+}
+
+textarea:focus {
+  border-color: #8f87ff;
+  box-shadow: 0 0 0 4px rgba(143, 135, 255, 0.15);
+}
+
+.actions {
+  margin-top: 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.btn {
+  border: none;
+  border-radius: 10px;
+  padding: 10px 18px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.btn-primary {
+  background: linear-gradient(90deg, #8f6dff 0%, #7a5af8 100%);
+  color: #fff;
+  box-shadow: 0 8px 18px rgba(122, 90, 248, 0.28);
+}
+
+.btn-secondary {
+  background: linear-gradient(180deg, #ffffff 0%, #f7f9ff 100%);
+  border: 1px solid #d6dceb;
+  color: #3a4354;
+}
+
+.btn:hover:not(:disabled) {
+  transform: translateY(-1px);
+  transition: all 0.2s ease;
+}
+
+.status-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  border-radius: 999px;
+  background: #eef2ff;
+  color: #4f46c9;
+  padding: 6px 10px;
+  font-size: 12px;
+}
+
+pre {
+  margin: 0;
+  white-space: pre-wrap;
+  line-height: 1.7;
+  color: #212936;
+}
+
+.source-item {
+  border: 1px solid #e8ebf3;
+  border-radius: 10px;
+  padding: 12px;
+  margin-bottom: 8px;
+  background: linear-gradient(180deg, #fcfdff 0%, #f6f8ff 100%);
+  line-height: 1.6;
+  white-space: pre-wrap;
+}
+
+@media (max-width: 900px) {
+  .settings {
+    grid-template-columns: 1fr;
+  }
+
+  .page-header {
+    flex-wrap: wrap;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .site-logo {
+    width: 100%;
+  }
+
+  .page-header-text {
+    flex: 1 1 min(0, 100%);
+  }
+}
